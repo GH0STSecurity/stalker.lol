@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import MediaBackground from './components/MediaBackground'
 import ProfileBanner from './components/ProfileBanner'
 import CodeText from './components/CodeText'
-import backgroundVideo from './assets/media/background.mp4'
-import bannerVideo from './assets/media/banner2.mp4'
+import backgroundVideo from './assets/media/bg_comp.mp4'
+import bannerVideo from './assets/media/b2_comp.mp4'
 import './App.css'
 
 function App() {

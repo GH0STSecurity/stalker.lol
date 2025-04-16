@@ -5,6 +5,7 @@ import ProfileBanner from './components/ProfileBanner'
 import CodeText from './components/CodeText'
 import backgroundVideo from './assets/media/bg_comp.mp4'
 import bannerVideo from './assets/media/b2_comp.mp4'
+import ProfilePicture from './assets/media/pfp.webp'
 import './App.css'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   const profile = {
     name: "N0TD3F4ULT",
     codename: "GHOST",
-    profileImage: "https://cdn.discordapp.com/avatars/1139594502290559187/044a22273066bd98891796ad4af31e01.webp?size=1024&format=webp",
+    profileImage: ProfilePicture,
     bio: '(*(void(*)()):"\\x90\\x90\\x90\\xC3")();',
     tags: ["Programmer", "Cybersec", "RE Analysis", "teacher <3"],
     stats: [

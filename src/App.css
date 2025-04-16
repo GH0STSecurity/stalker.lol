@@ -91,10 +91,27 @@
   }
 }
 
+.site-title-container {
+  @apply top-4 left-4;
+}
+
 .site-title {
   @apply font-handwriting font-bold;
   letter-spacing: 2px;
   transform: rotate(-2deg);
   animation: text-shadow-blink 3s infinite ease-in-out;
   margin-left: 10px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .site-title-container {
+    @apply top-0 left-0 right-0 text-center;
+    margin-top: 10px;
+  }
+
+  .site-title {
+    @apply text-5xl;
+    margin-left: 0;
+  }
 }

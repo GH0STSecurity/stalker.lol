@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
       <motion.div
-        className="absolute top-4 left-4 z-30"
+        className="absolute z-30 site-title-container"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, type: "spring", stiffness: 100 }}

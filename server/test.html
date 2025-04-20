@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Test</h1>
+    
+    <div class="form-group">
+        <label for="token">Token:</label>
+        <input type="text" id="token" value="dab925b6c6dc262398958430f2cbea707395b422845bd442dbf7858156f5cba0">
+    </div>
+    
+    <button onclick="testValidateToken()">Test Validate Token</button>
+    
+    <h2>Response:</h2>
+    <pre id="response"></pre>
+    
+    <script>
+        async function testValidateToken() {
+            const token = document.getElementById('token').value;
+            const responseElement = document.getElementById('response');
+            
+            try {
+                console.log('Testing token validation for:', token);
+                
+                const response = await fetch('http://localhost:3001/api/auth/validate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token }),
+                });
+                
+                const data = await response.json();
+                console.log('API Response:', data);
+                
+                responseElement.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                console.error('Error testing API:', error);
+                responseElement.textContent = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

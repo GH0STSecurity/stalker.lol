@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import MediaBackground from './components/MediaBackground'
 import ProfileBanner from './components/ProfileBanner'
 import CodeText from './components/CodeText'
+import LoginButton from './components/LoginButton'
 import backgroundVideo from './assets/media/bg_comp.mp4'
 import bannerVideo from './assets/media/b2_comp.mp4'
 import ProfilePicture from './assets/media/pfp.webp'
@@ -31,8 +32,10 @@ function App() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
       >
-        <h1 className="site-title text-7xl text-stalker-light font-handwriting">Stalker.Lol</h1>
+        <h1 className="site-title text-7xl text-stalker-light font-handwriting">Stalker.LOL</h1>
       </motion.div>
+
+      <LoginButton />
       <MediaBackground
         src={backgroundVideo}
         type="video"

@@ -17,10 +17,17 @@ if (!fs.existsSync(path.join(__dirname, 'config'))) {
 
 // Middleware
 app.use(cors({
-  origin: '*', // Allow all origins
+  origin: ['https://stalker.lol', 'http://localhost:8001'], // Allow specific origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // If you need to handle cookies/auth
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
+
+// Handle OPTIONS requests explicitly
+app.options('*', cors());
+
 app.use(express.json());
 
 // Routes

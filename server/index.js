@@ -25,13 +25,11 @@ app.use(cors({
   optionsSuccessStatus: 204
 }));
 
-// Handle OPTIONS requests explicitly
-app.use((req, res, next) => {
-  if (req.method === 'OPTIONS') {
-    return res.status(204).end();
-  }
-  next();
-});
+
+app.use(cors({
+  origin: ['https://stalker.lol', 'http://localhost:8001'],
+  credentials: true
+}));
 
 app.use(express.json());
 
